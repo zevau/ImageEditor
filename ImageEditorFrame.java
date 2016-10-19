@@ -7,8 +7,27 @@ import javax.imageio.*;
 
 public class ImageEditorFrame extends JFrame {
 	public ImageEditorFrame(){
+		createMenuBar();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(400, 300);
 		setVisible(true);
 	}
+}
+private void createMenuBar(){
+	JMenuBar menuBar = new JMenuBar();
+	setJMenuBar(menuBar);
+	JMenu menuFile = new JMenu("File");
+	menuBar.add(menuFile);
+	JMenuItem menuItemOpen = new JMenuItem("Open");
+	menuFile.add(menuItemOpen);
+	menuItemOpen.addActionListener(
+		new addActionListener(){
+			public void actionPerformed(ActionEvent e){
+				onOpen();
+			}
+		}
+	);
+}
+private void onOpen(){
+	JOptionPane.showMessageDialog(this, "Open Select");
 }
