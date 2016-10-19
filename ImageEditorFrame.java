@@ -27,12 +27,7 @@ public class ImageEditorFrame extends JFrame {
 		g.fillOval(10, 10, 380, 280);
 		panel.setImage(bufferedImage);
 		}
-	}
-	
-	private void onOpen(){
-		JOptionPane.showMessageDialog(this, "Open Select");
-	}
-	
+		
 	private void createMenuBar(){
 	JMenuBar menuBar = new JMenuBar();
 	setJMenuBar(menuBar);
@@ -41,12 +36,20 @@ public class ImageEditorFrame extends JFrame {
 	JMenuItem menuItemOpen = new JMenuItem("Open");
 	menuFile.add(menuItemOpen);
 	menuItemOpen.addActionListener(
-		new addActionListener(){
+		new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				onOpen();
 			}
 		}
 	);
 }
+
+
+	private void onOpen(){
+		JOptionPane.showMessageDialog(this, "Open Select");
+	}		
 }
+	
+	
+
 
